@@ -5,7 +5,7 @@ import SectionContainer from '@/components/SectionContainer'
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="antialiased border-t-8 border-blue-400 bg-gray-50">
+    <div className="antialiased border-t-8 border-blue-400">
       <Head>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
