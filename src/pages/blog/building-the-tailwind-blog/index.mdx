@@ -1,11 +1,11 @@
-import { adamwathan } from '@/authors'
+import { adibhanna } from '@/authors'
 import image from './card.jpg'
 
 export const meta = {
   title: 'Building the Tailwind Blog with Next.js',
   description: `One of the things we believe as a team is that everything we make should be sealed with a blog post. Forcing ourselves to write up a short announcement post for every project we work on acts as a built-in quality check, making sure that we never call a project "done" until we feel comfortable telling the world it's out there. The problem was that up until today, we didn't actually have anywhere to publish those posts!`,
   date: '2020-06-30T18:05:31Z',
-  authors: [adamwathan],
+  authors: [adibhanna],
   image,
   discussion: 'https://github.com/tailwindcss/tailwindcss/discussions/1987',
 }
@@ -75,14 +75,14 @@ This let us co-locate any assets for that post in the same folder, and leverage 
 We store metadata about each post in a `meta` object that we export at the top of each MDX file:
 
 ```js
-import { bradlc } from '@/authors'
+import { adibhanna } from '@/authors'
 import openGraphImage from './card.jpeg'
 
 export const meta = {
   title: 'Introducing linting for Tailwind CSS IntelliSense',
   description: `Today we’re releasing a new version of the Tailwind CSS IntelliSense extension for Visual Studio Code that adds Tailwind-specific linting to both your CSS and your markup.`,
   date: '2020-06-23T18:52:03Z',
-  authors: [bradlc],
+  authors: [adibhanna],
   image: openGraphImage,
   discussion: 'https://github.com/tailwindcss/tailwindcss/discussions/1956',
 }
@@ -99,23 +99,12 @@ import adamwathanAvatar from './img/adamwathan.jpg'
 import bradlcAvatar from './img/bradlc.jpg'
 import steveschogerAvatar from './img/steveschoger.jpg'
 
-export const adamwathan = {
+export const adibhanna = {
   name: 'Adam Wathan',
   twitter: '@adamwathan',
   avatar: adamwathanAvatar,
 }
 
-export const bradlc = {
-  name: 'Brad Cornes',
-  twitter: '@bradlc',
-  avatar: bradlcAvatar,
-}
-
-export const steveschoger = {
-  name: 'Steve Schoger',
-  twitter: '@steveschoger',
-  avatar: steveschogerAvatar,
-}
 ```
 
 The nice thing about actually importing the author object into a post instead of connecting it through some sort of identifier is that we can easily add an author inline if we wanted to:

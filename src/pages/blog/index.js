@@ -41,7 +41,7 @@ export default function Home() {
                         <a className="text-gray-900">{meta.title}</a>
                       </Link>
 
-                      <span className="text-sm leading-6 font-bold text-gray-600 xl:rounded xl:bg-gray-200 xl:px-3 xl:mr-2 xl:p-1">
+                      <span className="text-sm leading-6 font-bold text-gray-600">
                         <time dateTime={meta.date}>
                           {postDateTemplate.render(new Date(meta.date))}
                         </time>

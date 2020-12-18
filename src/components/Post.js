@@ -23,7 +23,7 @@ export default function Post({ meta, children, posts }) {
   const next = posts[postIndex - 1]
 
   return (
-    <article className="xl:divide-y xl:divide-gray-200">
+    <article className="divide-y divide-gray-200">
       <Head>
         <title>{meta.title} – Adib Hanna</title>
         <meta name="twitter:card" content="summary_large_image" />
@@ -39,7 +39,7 @@ export default function Post({ meta, children, posts }) {
         <meta property="og:image" content={`https://adibhanna.com${meta.image}`} />
         <meta name="description" content={meta.description}></meta>
       </Head>
-      <header className="pt-6 xl:pb-10">
+      <header className="pt-6 pb-10">
         <div className="space-y-1 text-center">
           <dl className="space-y-10">
             <div>
@@ -55,56 +55,48 @@ export default function Post({ meta, children, posts }) {
         </div>
       </header>
       <div
-        className="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20"
+        className="divide-y divide-gray-200 pb-16 xl:pb-20"
         style={{ gridTemplateRows: 'auto 1fr' }}
       >
-        <dl className="pt-6 pb-10 xl:pt-11 xl:border-b xl:border-gray-200">
-          <dt className="sr-only">Authors</dt>
-          <dd>
-            <ul className="flex justify-center xl:block space-x-8 sm:space-x-12 xl:space-x-0 xl:space-y-8">
-              {meta.authors.map((author) => (
-                <li key={author.twitter} className="flex items-center space-x-2">
-                  <img src={author.avatar} alt="" className="w-10 h-10 rounded-full" />
-                  <dl className="text-sm font-medium leading-5 whitespace-no-wrap">
-                    <dt className="sr-only">Name</dt>
-                    <dd className="text-gray-900">{author.name}</dd>
-                    <dt className="sr-only">Twitter</dt>
-                    <dd>
-                      <a
-                        href={`https://twitter.com/${author.twitter}`}
-                        className="text-teal-500 hover:text-teal-600"
-                      >
-                        {author.twitter}
-                      </a>
-                    </dd>
-                  </dl>
-                </li>
-              ))}
-            </ul>
-          </dd>
-        </dl>
-        <div className="divide-y divide-gray-200 xl:pb-0 xl:col-span-3 xl:row-span-2">
+        <div className="">
           <div className="prose max-w-none pt-10 pb-8">
             <MDXProvider components={mdxComponents}>{children}</MDXProvider>
           </div>
-          {meta.discussion && (
-            <div className="pt-6 pb-16">
-              <p>
-                Want to talk about this post?{' '}
-                <a href={meta.discussion} className="font-medium text-teal-500 hover:text-teal-600">
-                  Discuss this on GitHub &rarr;
-                </a>
-              </p>
-            </div>
-          )}
+
+          <dl className="pb-10 pt-5">
+            <dt className="sr-only">Author</dt>
+            <dd>
+              <ul className="flex justify-center space-x-8 space-y-8">
+                {meta.authors.map((author) => (
+                  <li key={author.twitter} className="flex items-center space-x-2">
+                    <img src={author.avatar} alt="" className="w-10 h-10 rounded-full" />
+                    <dl className="text-sm font-medium leading-5 whitespace-no-wrap">
+                      <dt className="sr-only">Name</dt>
+                      <dd className="text-gray-900">Adib Hanna</dd>
+                      <dt className="sr-only">Twitter</dt>
+                      <dd>
+                        <a
+                          href={`https://twitter.com/Adib_Hanna`}
+                          className="text-blue-500 hover:text-blue-600"
+                        >
+                          {author.twitter}
+                        </a>
+                      </dd>
+                    </dl>
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          </dl>
         </div>
-        <footer className="text-sm font-medium leading-5 divide-y divide-gray-200 xl:col-start-1 xl:row-start-2">
+
+        <footer className="text-sm font-medium leading-5 divide-y divide-gray-200">
           {(next || previous) && (
-            <div className="space-y-8 py-8">
+            <div className="flex md:flex-row-reverse flex-col md:items-center md:justify-between py-8 md:space-y-0 space-y-8">
               {next && (
                 <div>
-                  <h2 className="text-xs tracking-wide uppercase text-gray-500">Next Article</h2>
-                  <div className="text-teal-500 hover:text-teal-600">
+                  <h2 className="text-xs tracking-wide uppercase text-gray-500">Next Post</h2>
+                  <div className="text-blue-500 hover:text-blue-600">
                     <Link href={next.link}>
                       <a>{next.title}</a>
                     </Link>
@@ -113,10 +105,8 @@ export default function Post({ meta, children, posts }) {
               )}
               {previous && (
                 <div>
-                  <h2 className="text-xs tracking-wide uppercase text-gray-500">
-                    Previous Article
-                  </h2>
-                  <div className="text-teal-500 hover:text-teal-600">
+                  <h2 className="text-xs tracking-wide uppercase text-gray-500">Previous Post</h2>
+                  <div className="text-blue-500 hover:text-blue-600">
                     <Link href={previous.link}>
                       <a>{previous.title}</a>
                     </Link>
@@ -127,7 +117,7 @@ export default function Post({ meta, children, posts }) {
           )}
           <div className="pt-8">
             <Link href="/blog">
-              <a className="text-teal-500 hover:text-teal-600">&larr; Back to the blog</a>
+              <a className="text-blue-500 hover:text-blue-600">&larr; All posts</a>
             </Link>
           </div>
         </footer>
